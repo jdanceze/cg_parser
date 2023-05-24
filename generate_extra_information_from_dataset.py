@@ -174,6 +174,7 @@ def get_new_column_headers(old_columns):
     #There will be separate column per feature per analysis
     for analysis_name in analysis_names:
         #Don't add columns for the dynamic analysis
+        print(analysis_name)
         if (DYNAMIC_ANALYSIS_NAME==analysis_name):
             continue
         new_headers += [analysis_name + "#depth_from_main",
