@@ -41,11 +41,22 @@ def main():
                 edge_id = (name, edge.bytecodeOffset, edge.dest)
                 without_closure_edges.add(edge_id)
 
+    # Read the labels from the CSV file
+    labels = {}
+    with open('your_csv_file.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            method = row[0]
+            target = row[2]
+            label = row[3]
+            labels[(method, target)] = label
+
     #Write output
     printed = set()
     with open(outputfile, "w") as filep:
         writer = csv.writer(filep)
-        writer.writerow(["method", "offset", "target","wala","wala-direct"])
+        writer.writerow(["method", "offset", "target","wala","wala-direct", "label"])
         for name, obj in nodes_with_closure.items():
             for edge in obj.edges:
                 edge_id = (name, edge.bytecodeOffset, edge.dest)
@@ -53,10 +64,12 @@ def main():
                     continue
                 printed.add(edge_id)
 
+                label = labels.get((name, edge.dest), "0")
+
                 if edge_id in without_closure_edges:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","1"))
+                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","1","label"))
                 else:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","0"))
+                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","0","label"))
                 
 
 def empty_node():
@@ -164,6 +177,7 @@ def remove_stdlib_edges(analysisfile, methodsfile, do_transitive_closure):
             _method = edge["method"]
             _offset = edge["offset"]
             _target = edge["target"]
+            #_label = edge["label"]
             nodes[_method].edges.append(Edge(_offset, _target))
 
     #Read the nethod list from the methods.csv file
