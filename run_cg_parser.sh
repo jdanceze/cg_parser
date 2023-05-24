@@ -7,3 +7,4 @@ python3 gen_coverage_sig_set.py
 python3 label_csv.py
 python3 remove_std_lib_edges.py
 python3 generate_extra_information_from_dataset.py ./output/ True
+python3 refine_cg_label.py
