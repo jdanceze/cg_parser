@@ -6,7 +6,8 @@ config.read('settings.ini')
 
 labeled_csv_file = config.get('Paths', 'labeled_csv_file')
 combinationWithExtraFeatures_file = config.get('Paths', 'combinationWithExtraFeatures_file')
-output_file = 'output.csv'  # Specify the output file name
+combinationWithExtraFeatures_label_file = config.get('Paths', 'combinationWithExtraFeatures_label_file')
+
 
 # Read the labels from the labeled CSV file
 labels = {}
@@ -23,8 +24,9 @@ with open(labeled_csv_file, 'r') as file:
 with open(combinationWithExtraFeatures_file, 'r') as file:
     reader = csv.reader(file)
     header = next(reader)  # Read the header row
+    header.append('label') 
 
-    with open(output_file, 'w', newline='') as output_file:
+    with open(combinationWithExtraFeatures_label_file, 'w', newline='') as output_file:
         writer = csv.writer(output_file)
         writer.writerow(header)  # Write the header row to the output file
 
