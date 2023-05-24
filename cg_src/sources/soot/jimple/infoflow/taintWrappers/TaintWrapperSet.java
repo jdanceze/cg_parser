@@ -1,0 +1,107 @@
+package soot.jimple.infoflow.taintWrappers;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import soot.SootMethod;
+import soot.jimple.Stmt;
+import soot.jimple.infoflow.InfoflowManager;
+import soot.jimple.infoflow.data.Abstraction;
+/* loaded from: gencallgraphv3.jar:soot/jimple/infoflow/taintWrappers/TaintWrapperSet.class */
+public class TaintWrapperSet implements IReversibleTaintWrapper {
+    private Set<ITaintPropagationWrapper> wrappers = new HashSet();
+    private AtomicInteger hits = new AtomicInteger();
+    private AtomicInteger misses = new AtomicInteger();
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public void initialize(InfoflowManager manager) {
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            w.initialize(manager);
+        }
+    }
+
+    public void addWrapper(ITaintPropagationWrapper wrapper) {
+        this.wrappers.add(wrapper);
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public Set<Abstraction> getTaintsForMethod(Stmt stmt, Abstraction d1, Abstraction taintedPath) {
+        Set<Abstraction> resList = new HashSet<>();
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            Set<Abstraction> curAbsSet = w.getTaintsForMethod(stmt, d1, taintedPath);
+            if (curAbsSet != null && !curAbsSet.isEmpty()) {
+                resList.addAll(curAbsSet);
+            }
+        }
+        if (resList.isEmpty()) {
+            this.misses.incrementAndGet();
+        } else {
+            this.hits.incrementAndGet();
+        }
+        return resList;
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public boolean isExclusive(Stmt stmt, Abstraction taintedPath) {
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            if (w.isExclusive(stmt, taintedPath)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public boolean supportsCallee(SootMethod method) {
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            if (w.supportsCallee(method)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public boolean supportsCallee(Stmt callSite) {
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            if (w.supportsCallee(callSite)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public int getWrapperHits() {
+        return this.hits.get();
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public int getWrapperMisses() {
+        return this.misses.get();
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper
+    public Set<Abstraction> getAliasesForMethod(Stmt stmt, Abstraction d1, Abstraction taintedPath) {
+        Set<Abstraction> resList = new HashSet<>();
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            Set<Abstraction> curAbsSet = w.getAliasesForMethod(stmt, d1, taintedPath);
+            if (curAbsSet != null && !curAbsSet.isEmpty()) {
+                resList.addAll(curAbsSet);
+            }
+        }
+        return resList;
+    }
+
+    @Override // soot.jimple.infoflow.taintWrappers.IReversibleTaintWrapper
+    public Set<Abstraction> getInverseTaintsForMethod(Stmt stmt, Abstraction d1, Abstraction taintedPath) {
+        Set<Abstraction> curAbsSet;
+        Set<Abstraction> resList = new HashSet<>();
+        for (ITaintPropagationWrapper w : this.wrappers) {
+            if ((w instanceof IReversibleTaintWrapper) && (curAbsSet = ((IReversibleTaintWrapper) w).getInverseTaintsForMethod(stmt, d1, taintedPath)) != null && !curAbsSet.isEmpty()) {
+                resList.addAll(curAbsSet);
+            }
+        }
+        return resList;
+    }
+}

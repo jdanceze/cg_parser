@@ -1,0 +1,26 @@
+// CRASH: com.autostart (pid 21249)
+// Short Msg: android.content.ActivityNotFoundException
+// Long Msg: android.content.ActivityNotFoundException: No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.discolight }
+// Build Label: generic_x86/sdk_x86/generic_x86:4.4.2/KK/4174703:eng/test-keys
+// Build Changelist: 4174703
+// Build Time: 1499888129000
+// android.content.ActivityNotFoundException: No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.discolight }
+// 	at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:1632)
+// 	at android.app.Instrumentation.execStartActivity(Instrumentation.java:1424)
+// 	at android.app.Activity.startActivityForResult(Activity.java:3424)
+// 	at android.app.Activity.startActivityForResult(Activity.java:3385)
+// 	at android.app.Activity.startActivity(Activity.java:3627)
+// 	at android.app.Activity.startActivity(Activity.java:3595)
+// 	at com.autostart.AutoStartActivity$2.onClick(AutoStartActivity.java:118)
+// 	at android.view.View.performClick(View.java:4438)
+// 	at android.view.View$PerformClick.run(View.java:18422)
+// 	at android.os.Handler.handleCallback(Handler.java:733)
+// 	at android.os.Handler.dispatchMessage(Handler.java:95)
+// 	at android.os.Looper.loop(Looper.java:136)
+// 	at android.app.ActivityThread.main(ActivityThread.java:5017)
+// 	at java.lang.reflect.Method.invokeNative(Native Method)
+// 	at java.lang.reflect.Method.invoke(Method.java:515)
+// 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:779)
+// 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:595)
+// 	at dalvik.system.NativeStart.main(Native Method)
+// 

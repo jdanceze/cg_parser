@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="llappSelect" />
+    <item type="id" name="checkBox2" />
+    <item type="id" name="listView1" />
+    <item type="id" name="svAppSettings" />
+    <item type="id" name="textView1" />
+    <item type="id" name="toggleButton1" />
+    <item type="id" name="llApps" />
+    <item type="id" name="textView2" />
+    <item type="id" name="btSelect" />
+    <item type="id" name="progress_bar" />
+    <item type="id" name="checkBox1" />
+    <item type="id" name="etDelayBetween" />
+    <item type="id" name="cbJumpToHome" />
+    <item type="id" name="tvDelay" />
+    <item type="id" name="etDelay" />
+    <item type="id" name="tvDelayBetween" />
+    <item type="id" name="btDiscoLight" />
+</resources>

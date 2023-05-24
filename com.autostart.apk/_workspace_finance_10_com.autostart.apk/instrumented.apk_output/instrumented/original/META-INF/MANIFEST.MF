@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Created-By: 17.0.6 (Private Build)
+
+Name: res/drawable/pressed.9.png
+SHA-256-Digest: NBGRlPCdeC9m6OAtIiNLsRX29G/X6LvuGCcNYigq/tE=
+
+Name: res/drawable/disabled.9.png
+SHA-256-Digest: f0KRz91H7ZtNoOoE4m2h3ktugAmmkbRJOn+9s4DoDjE=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: I2XL7SfmIOYM6qRTFvo5g0CAaZrb/A/RkhL0AKiclUY=
+
+Name: res/drawable-ldpi-v4/icon.png
+SHA-256-Digest: 0lpoCFiiCv0zViP9+uNMFoGQKEyfo66vf0xa4YtFA9I=
+
+Name: res/layout/main.xml
+SHA-256-Digest: UngiZgzReeb6XQ5XH4JZYDOYb8UXB6V+gl6nk8yS5pw=
+
+Name: res/drawable/my_textfield_checked.9.png
+SHA-256-Digest: Pwgy89z6Y5nqasHrQqoRxaaJs7813XzhG+KsA988jH4=
+
+Name: res/drawable-hdpi-v4/icon.png
+SHA-256-Digest: nA7VMXH8UVGQkXjJCaz6k1EdbgUce282OiaYD80M1zE=
+
+Name: res/drawable/mydefault.9.png
+SHA-256-Digest: gzf4b4c4SBU7rHgffyfhBh6IyC3TBFzDuJQg7BM6ano=
+
+Name: res/drawable/my_style.xml
+SHA-256-Digest: oujkHdeQ6Xc0qM2zJ4a1ztXchd5PT5AIwoJtr/60qIg=
+
+Name: res/drawable-mdpi-v4/icon.png
+SHA-256-Digest: 0lpoCFiiCv0zViP9+uNMFoGQKEyfo66vf0xa4YtFA9I=
+
+Name: res/drawable/disabled_selected.9.png
+SHA-256-Digest: 4auLpBog9Y/E0I+RiH7H+YO6mTf4KchFUvNsrCSXKME=
+
+Name: resources.arsc
+SHA-256-Digest: jzZBJzMp2P+KqDiAurnb7/yGGjngCubXrTAohXnd4po=
+
+Name: classes.dex
+SHA-256-Digest: /dQIJ4eekg9iEDd5vHnBUGU5E0al/5KWaET3ofrDYBM=
+
+Name: res/drawable/selected.9.png
+SHA-256-Digest: gzf4b4c4SBU7rHgffyfhBh6IyC3TBFzDuJQg7BM6ano=
+
+Name: res/drawable/checked.9.png
+SHA-256-Digest: gjg/81M7Wlllyq6omdYuqmMnmTE2ulaX+8J1yEffOW0=
+

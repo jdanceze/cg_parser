@@ -1,0 +1,4 @@
+<dummyMainClass: com.autostart.TimeOutReceiver dummyMainMethod_com_autostart_TimeOutReceiver(android.content.Intent)>
+<dummyMainClass: com.autostart.MyBroadcastreceiver dummyMainMethod_com_autostart_MyBroadcastreceiver(android.content.Intent)>
+<dummyMainClass: com.autostart.TimeOutHomeReceiver dummyMainMethod_com_autostart_TimeOutHomeReceiver(android.content.Intent)>
+<dummyMainClass: com.autostart.AutoStartActivity dummyMainMethod_com_autostart_AutoStartActivity(android.content.Intent)>
