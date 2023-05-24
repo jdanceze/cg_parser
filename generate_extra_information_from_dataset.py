@@ -30,7 +30,8 @@ KEEP_PROGRAM_LEVEL_COLS = True
 # -> not maintained AVERAGE_EXTRA_FEATURES = sys.argv[2] == "True"
 DATASET_FILE = "combined_dataset.csv"
 BENCHMARK_INFO_FILE = "benchmark.json"
-DYNAMIC_ANALYSIS_NAME = "wiretap"
+#DYNAMIC_ANALYSIS_NAME = "wiretap"
+DYNAMIC_ANALYSIS_NAME = "label"
 OUTPUT_DATASET_FILE = "combinationWithExtraFeatures.csv"
 #We calculate the relative number of nodes/edges in the
 #graph with this analysis' counts in the denominator
