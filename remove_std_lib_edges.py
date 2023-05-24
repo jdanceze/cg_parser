@@ -56,7 +56,7 @@ def main():
     printed = set()
     with open(outputfile, "w") as filep:
         writer = csv.writer(filep)
-        writer.writerow(["method", "offset", "target","wala","wala-direct", "label"])
+        writer.writerow(["label","method", "offset", "target","wala","wala-direct"])
         for name, obj in nodes_with_closure.items():
             for edge in obj.edges:
                 edge_id = (name, edge.bytecodeOffset, edge.dest)
@@ -67,9 +67,9 @@ def main():
                 label = labels.get((name, edge.dest), "0")
 
                 if edge_id in without_closure_edges:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","1",label))
+                    writer.writerow((label,name, edge.bytecodeOffset, edge.dest,"1","1"))
                 else:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","0",label))
+                    writer.writerow((label,name, edge.bytecodeOffset, edge.dest,"1","0"))
                 
 
 def empty_node():
