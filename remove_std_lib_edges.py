@@ -67,9 +67,9 @@ def main():
                 label = labels.get((name, edge.dest), "0")
 
                 if edge_id in without_closure_edges:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","1","label"))
+                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","1",label))
                 else:
-                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","0","label"))
+                    writer.writerow((name, edge.bytecodeOffset, edge.dest,"1","0",label))
                 
 
 def empty_node():
