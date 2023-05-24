@@ -27,9 +27,12 @@ with open(soot_cg_file, 'r') as file:
 for row in rows:
     print(row[0])
     if 'dummyMainMethod' in row[0]:
-        new_row = ['<boot>', '0', row[2]]
-        new_rows.append(new_row)
-        dummy_main_method.append(row[2])
+        try:
+            new_row = ['<dummyMainMethod>', '0', row[2]]
+            new_rows.append(new_row)
+            dummy_main_method.append(row[2])
+        except:
+            print("Error: ", row)
 
 processed_data = [[process_data(row[0]).replace('"', ''), process_data(row[1]).replace('"', ''), process_data(row[2]).replace('"', '')] for row in rows]
 
