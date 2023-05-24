@@ -43,7 +43,7 @@ def main():
 
     # Read the labels from the CSV file
     labels = {}
-    with open('your_csv_file.csv', 'r') as file:
+    with open(analysisfile, 'r') as file:
         reader = csv.reader(file)
         next(reader)  # Skip the header row
         for row in reader:
