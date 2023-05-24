@@ -10,6 +10,7 @@ from pathlib import Path
 import queue
 import json
 from collections import defaultdict, namedtuple
+import configparser
 
 ROOT_METHOD = "<boot>"
 
@@ -17,12 +18,17 @@ ROOT_METHOD = "<boot>"
 Edge = namedtuple("Edge", "bytecodeOffset dest")
 Node = namedtuple("Node",
             ["edges","reachable_app_nodes","reachableNodes","isStdLibNode"])
+config = configparser.ConfigParser()
+config.read('settings.ini')
 
 def main():
     """ The main method of the removestdlibedges.py script. """
-    analysisfile = Path(sys.argv[1])
-    methodsfile = Path(sys.argv[2])
-    outputfile = Path(sys.argv[3])
+    # analysisfile = Path(sys.argv[1])
+    # methodsfile = Path(sys.argv[2])
+    # outputfile = Path(sys.argv[3])
+    analysisfile = Path(config.get('Paths', 'labeled_csv_file'))
+    methodsfile = Path(config.get('Paths', 'method_reference_file'))
+    outputfile = Path(config.get('Paths', 'combined_dataset_file'))
     
     #Loop through all the file names
     nodes_with_closure = remove_stdlib_edges(analysisfile, methodsfile, True)
