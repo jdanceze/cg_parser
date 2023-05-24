@@ -4,7 +4,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('settings.ini')
 
-soot_cg_file = config.get('Paths', 'soot_cg_file')
+raw_cg_csv_file = config.get('Paths', 'raw_cg_csv_file')
 refine_csv_file = config.get('Paths', 'refine_csv_file')
 dummy_main_method_file = config.get('Paths', 'dummy_main_method_file')
 
@@ -18,7 +18,7 @@ def process_data(data):
         return data[start_index:end_index+1]
     return data
 
-with open(soot_cg_file, 'r') as file:
+with open(raw_cg_csv_file, 'r') as file:
     reader = csv.reader(file)
     header = next(reader)
     rows = list(reader)
@@ -27,12 +27,9 @@ with open(soot_cg_file, 'r') as file:
 for row in rows:
     print(row[0])
     if 'dummyMainMethod' in row[0]:
-        try:
-            new_row = ['<dummyMainMethod>', '0', row[2]]
-            new_rows.append(new_row)
-            dummy_main_method.append(row[2])
-        except:
-            print("Error: ", row)
+        new_row = ['<boot>', '0', row[2]]
+        new_rows.append(new_row)
+        dummy_main_method.append(row[2])
 
 processed_data = [[process_data(row[0]).replace('"', ''), process_data(row[1]).replace('"', ''), process_data(row[2]).replace('"', '')] for row in rows]
 
