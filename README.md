@@ -12,3 +12,6 @@ Output files are stored in `output` folder.
 - raw_cg.csv: raw static callgraph in csv format directly parse from soot static callgraph
 - refine_cg.csv: a static callgraph parse from raw_cg.csv (no extra features)
 - labeled_cg.csv: a dynamic callgraph before process to generating extra feature (no extra features)
+
+## Finding Source Code from Method Signature
+- run `java -jar MethodSourceCodeRetriever.jar <methodSignaturesFile> <sourceFilesDirectory> <outputCsvFile>`
