@@ -1,4 +1,5 @@
 import os
+import sys
 
 def read_mapping_file(mapping_file):
     mapping = {}
@@ -34,8 +35,9 @@ def process_data(data_file, mapping_file):
             else:
                 print(f"Name: {name} | APK Location not found")
 
-# Define the paths to the data file and mapping file
-data_file_path = './demo/cov_de.txt'
+
+# Get the data file path and mapping file path from command-line arguments
+data_file_path = sys.argv[1]
 mapping_file_path = './ella_name_map.txt'
 
 # Process the data

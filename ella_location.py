@@ -1,5 +1,5 @@
 import os
-
+import sys
 def read_mapping_file(mapping_file):
     mapping = {}
     with open(mapping_file, 'r') as file:
@@ -29,7 +29,7 @@ def process_data(data_file, mapping_file):
             print(f"{name}")
 
 # Define the paths to the data file and mapping file
-data_file_path = './demo/cov_de.txt'
+data_file_path = sys.argv[1]
 mapping_file_path = './ella_name_map.txt'
 
 # Process the data
