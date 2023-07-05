@@ -1,6 +1,6 @@
 #!/bin/bash
 package=$(python3 package_name.py)
-mkdir $package
+mkdir ./data/$package
 echo "apk name: " $package
 ./clear_output.sh
 apk_location=$(python3 apk_location.py)
@@ -41,4 +41,4 @@ echo "set default values"
 ./fill_default_values.sh ./output/final combinationWithExtraFeatures_label.csv
 ./fill_default_values.sh ./output/final combinationWithExtraFeatures.csv
 java -jar ./java/MethodSourceCodeRetriever.jar ./output/methods_reference.txt ./output/source ./output/final/sig_to_func.csv
-mv ./output ./$package/output
+mv ./output ./data/$package/output
