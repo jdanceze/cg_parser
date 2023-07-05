@@ -12,7 +12,6 @@ def convert_signature(signature):
     #match = re.match(r'(.+?)\s+(\w+)\(', method_signature)
     match = re.match(r'(.+?)\s+(.+?)\(', method_signature)
     if not match:
-        # #if methodsignature begin with 'L' then print it
         # if method_signature.startswith('L'):
         #     method_signature = method_signature[1:-1].replace('/', '.')
         #     class_name, method_name = signature.split('; ')

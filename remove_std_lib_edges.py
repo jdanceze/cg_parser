@@ -14,7 +14,7 @@ import configparser
 
 ROOT_METHOD = "<boot>"
 
-#Edge and Node classes to model the graph
+
 Edge = namedtuple("Edge", "bytecodeOffset dest")
 Node = namedtuple("Node",
             ["edges","reachable_app_nodes","reachableNodes","isStdLibNode"])
@@ -30,11 +30,11 @@ def main():
     methodsfile = Path(config.get('Paths', 'method_reference_file'))
     outputfile = Path(config.get('Paths', 'combined_dataset_file'))
     
-    #Loop through all the file names
+
     nodes_with_closure = remove_stdlib_edges(analysisfile, methodsfile, True)
     nodes_without_closure = remove_stdlib_edges(analysisfile, methodsfile, False)
 
-    #Compute without-closure edges
+
     without_closure_edges = set()
     for name, obj in nodes_without_closure.items():
             for edge in obj.edges:

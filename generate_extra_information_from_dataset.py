@@ -964,6 +964,7 @@ def main():
                 #as ratios to the size of the 'REFERENCE_ANALYSIS' 
                 # -> can't be explained compute_relative_node_and_edge_counts(
                 #    graph,callgraphs[REFERENCE_ANALYSIS])
+                #compute_relative_node_and_edge_counts(graph,callgraphs[REFERENCE_ANALYSIS])
                 #compute the number of paths from main 
                 #and from orphan nodes
                 #not having any feature imp 
