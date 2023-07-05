@@ -1,3 +1,3 @@
-02791a41f0b4b9bdba59ce4ab25c2270acf634bfe15f958c1996703a4fdd98f3,/workspace/ella-master/ella-out/02791a41f0b4b9bdba59ce4ab25c2270acf634bfe15f958c1996703a4fdd98f3/,4.10940627085, ( 308 / 7495 )
-02c02e2679a5c496efa198842bdb627c75efd2d12998d3a2e2cee8360b9d64aa,/workspace/ella-master/ella-out/02c02e2679a5c496efa198842bdb627c75efd2d12998d3a2e2cee8360b9d64aa/,4.3165920978, ( 685 / 15869 )
-059183b440618be803f7ca4740106d886a6f3830fd5b30fc460033b6994534b9,/workspace/ella-master/ella-out/059183b440618be803f7ca4740106d886a6f3830fd5b30fc460033b6994534b9/,27.4366045604, ( 4079 / 14867 )
+15c6a029a8ce6ca7242bcdec5ee084c650d5062e73ca16392418accf568305a3,/workspace/ella-master4/ella-out/15c6a029a8ce6ca7242bcdec5ee084c650d5062e73ca16392418accf568305a3/,80.0,( 108 / 135 )
+_workspace_finance_10_com.autostart.apk,/workspace/ella-master5/out_no_gpu/_workspace_finance_10_com.autostart.apk/,79.74683544,( 63 / 79 )
+_workspace_business_100_1_org.intoorbit.spectrum.apk,/workspace/ella-master3/out_no_gpu/_workspace_business_100_1_org.intoorbit.spectrum.apk/,75.75757576,( 375 / 495 )

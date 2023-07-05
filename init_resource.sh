@@ -47,8 +47,8 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     
     python3 setting.py "$soot_cg" "$covid_location" "$cov_location"
     
-    echo "Start parse_cg_to_csv.py"
-    python3 parse_cg_to_csv.py
+    echo "Start prase_cg_to_csv.py"
+    python3 prase_cg_to_csv.py
     
     echo "Start refine_csv.py"
     python3 refine_csv.py
