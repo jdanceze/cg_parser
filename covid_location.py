@@ -29,8 +29,8 @@ def process_data(data_file, mapping_file):
             print(f"{name}covids")
 
 # Define the paths to the data file and mapping file
-data_file_path = '/Users/jdanceze/Desktop/hub/cg_parser/demo/cov_de.txt'
-mapping_file_path = '/Users/jdanceze/Desktop/hub/cg_parser/ella_name_map.txt'
+data_file_path = './demo/cov_de.txt'
+mapping_file_path = './ella_name_map.txt'
 
 # Process the data
 process_data(data_file_path, mapping_file_path)
