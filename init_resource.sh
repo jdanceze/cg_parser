@@ -38,7 +38,7 @@ python3 refine_cg_label.py
 echo "start rename_header.py"
 python3 rename_header.py
 echo "set default values"
-./fill_default_values_mac.sh ./output/final combinationWithExtraFeatures_label.csv
-./fill_default_values_mac.sh ./output/final combinationWithExtraFeatures.csv
+./fill_default_values.sh ./output/final combinationWithExtraFeatures_label.csv
+./fill_default_values.sh ./output/final combinationWithExtraFeatures.csv
 java -jar ./java/MethodSourceCodeRetriever.jar ./output/methods_reference.txt ./output/source ./output/final/sig_to_func.csv
 mv ./output ./$package/output
