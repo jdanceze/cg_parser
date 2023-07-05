@@ -8,6 +8,12 @@ echo "apk location: " $apk_location
 jadx -d ./output/source $apk_location
 soot_cg=$(python3 soot_location.py)/$package.txt
 echo "soot location: " $soot_cg
+ella_location=$(python3 ella_location.py)
+echo "ella location: " $ella_location
+current_dir=$(pwd)
+cd $ella_location
+cat coverage.dat.* > coverage.dat.2024-06-11-18-04-31
+cd $current_dir
 covid_location=$(python3 covid_location.py)
 echo "covid location: " $covid_location
 cov_locaution=$(python3 cov_location.py)
